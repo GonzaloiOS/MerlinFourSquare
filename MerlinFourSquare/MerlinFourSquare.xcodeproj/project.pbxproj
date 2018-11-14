@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */; };
+		EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB42219BF9D2005DA89F /* ViewController.swift */; };
+		EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFDEB44219BF9D2005DA89F /* Main.storyboard */; };
+		EAFDEB48219BF9D3005DA89F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFDEB47219BF9D3005DA89F /* Assets.xcassets */; };
+		EAFDEB4B219BF9D3005DA89F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFDEB49219BF9D3005DA89F /* LaunchScreen.storyboard */; };
+		EAFDEB56219BF9D3005DA89F /* MerlinFourSquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB55219BF9D3005DA89F /* MerlinFourSquareTests.swift */; };
+		EAFDEB61219BF9D3005DA89F /* MerlinFourSquareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB60219BF9D3005DA89F /* MerlinFourSquareUITests.swift */; };
+		EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB6F219BF9F0005DA89F /* NetworkManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAFDEB52219BF9D3005DA89F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAFDEB35219BF9D2005DA89F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAFDEB3C219BF9D2005DA89F;
+			remoteInfo = MerlinFourSquare;
+		};
+		EAFDEB5D219BF9D3005DA89F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAFDEB35219BF9D2005DA89F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAFDEB3C219BF9D2005DA89F;
+			remoteInfo = MerlinFourSquare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EAFDEB3D219BF9D2005DA89F /* MerlinFourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerlinFourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAFDEB42219BF9D2005DA89F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAFDEB45219BF9D2005DA89F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAFDEB47219BF9D3005DA89F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAFDEB4A219BF9D3005DA89F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAFDEB4C219BF9D3005DA89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAFDEB51219BF9D3005DA89F /* MerlinFourSquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MerlinFourSquareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFDEB55219BF9D3005DA89F /* MerlinFourSquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerlinFourSquareTests.swift; sourceTree = "<group>"; };
+		EAFDEB57219BF9D3005DA89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAFDEB5C219BF9D3005DA89F /* MerlinFourSquareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MerlinFourSquareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFDEB60219BF9D3005DA89F /* MerlinFourSquareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerlinFourSquareUITests.swift; sourceTree = "<group>"; };
+		EAFDEB62219BF9D3005DA89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAFDEB6F219BF9F0005DA89F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAFDEB3A219BF9D2005DA89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFDEB4E219BF9D3005DA89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFDEB59219BF9D3005DA89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAFDEB34219BF9D2005DA89F = {
+			isa = PBXGroup;
+			children = (
+				EAFDEB3F219BF9D2005DA89F /* MerlinFourSquare */,
+				EAFDEB54219BF9D3005DA89F /* MerlinFourSquareTests */,
+				EAFDEB5F219BF9D3005DA89F /* MerlinFourSquareUITests */,
+				EAFDEB3E219BF9D2005DA89F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAFDEB3E219BF9D2005DA89F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDEB3D219BF9D2005DA89F /* MerlinFourSquare.app */,
+				EAFDEB51219BF9D3005DA89F /* MerlinFourSquareTests.xctest */,
+				EAFDEB5C219BF9D3005DA89F /* MerlinFourSquareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAFDEB3F219BF9D2005DA89F /* MerlinFourSquare */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDEB6E219BF9DF005DA89F /* Model */,
+				EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */,
+				EAFDEB42219BF9D2005DA89F /* ViewController.swift */,
+				EAFDEB44219BF9D2005DA89F /* Main.storyboard */,
+				EAFDEB47219BF9D3005DA89F /* Assets.xcassets */,
+				EAFDEB49219BF9D3005DA89F /* LaunchScreen.storyboard */,
+				EAFDEB4C219BF9D3005DA89F /* Info.plist */,
+			);
+			path = MerlinFourSquare;
+			sourceTree = "<group>";
+		};
+		EAFDEB54219BF9D3005DA89F /* MerlinFourSquareTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDEB55219BF9D3005DA89F /* MerlinFourSquareTests.swift */,
+				EAFDEB57219BF9D3005DA89F /* Info.plist */,
+			);
+			path = MerlinFourSquareTests;
+			sourceTree = "<group>";
+		};
+		EAFDEB5F219BF9D3005DA89F /* MerlinFourSquareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDEB60219BF9D3005DA89F /* MerlinFourSquareUITests.swift */,
+				EAFDEB62219BF9D3005DA89F /* Info.plist */,
+			);
+			path = MerlinFourSquareUITests;
+			sourceTree = "<group>";
+		};
+		EAFDEB6E219BF9DF005DA89F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDEB6F219BF9F0005DA89F /* NetworkManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAFDEB3C219BF9D2005DA89F /* MerlinFourSquare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAFDEB65219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquare" */;
+			buildPhases = (
+				EAFDEB39219BF9D2005DA89F /* Sources */,
+				EAFDEB3A219BF9D2005DA89F /* Frameworks */,
+				EAFDEB3B219BF9D2005DA89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MerlinFourSquare;
+			productName = MerlinFourSquare;
+			productReference = EAFDEB3D219BF9D2005DA89F /* MerlinFourSquare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EAFDEB50219BF9D3005DA89F /* MerlinFourSquareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAFDEB68219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquareTests" */;
+			buildPhases = (
+				EAFDEB4D219BF9D3005DA89F /* Sources */,
+				EAFDEB4E219BF9D3005DA89F /* Frameworks */,
+				EAFDEB4F219BF9D3005DA89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAFDEB53219BF9D3005DA89F /* PBXTargetDependency */,
+			);
+			name = MerlinFourSquareTests;
+			productName = MerlinFourSquareTests;
+			productReference = EAFDEB51219BF9D3005DA89F /* MerlinFourSquareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EAFDEB5B219BF9D3005DA89F /* MerlinFourSquareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAFDEB6B219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquareUITests" */;
+			buildPhases = (
+				EAFDEB58219BF9D3005DA89F /* Sources */,
+				EAFDEB59219BF9D3005DA89F /* Frameworks */,
+				EAFDEB5A219BF9D3005DA89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAFDEB5E219BF9D3005DA89F /* PBXTargetDependency */,
+			);
+			name = MerlinFourSquareUITests;
+			productName = MerlinFourSquareUITests;
+			productReference = EAFDEB5C219BF9D3005DA89F /* MerlinFourSquareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAFDEB35219BF9D2005DA89F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Gonzalinho;
+				TargetAttributes = {
+					EAFDEB3C219BF9D2005DA89F = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					EAFDEB50219BF9D3005DA89F = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = EAFDEB3C219BF9D2005DA89F;
+					};
+					EAFDEB5B219BF9D3005DA89F = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = EAFDEB3C219BF9D2005DA89F;
+					};
+				};
+			};
+			buildConfigurationList = EAFDEB38219BF9D2005DA89F /* Build configuration list for PBXProject "MerlinFourSquare" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAFDEB34219BF9D2005DA89F;
+			productRefGroup = EAFDEB3E219BF9D2005DA89F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAFDEB3C219BF9D2005DA89F /* MerlinFourSquare */,
+				EAFDEB50219BF9D3005DA89F /* MerlinFourSquareTests */,
+				EAFDEB5B219BF9D3005DA89F /* MerlinFourSquareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAFDEB3B219BF9D2005DA89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAFDEB4B219BF9D3005DA89F /* LaunchScreen.storyboard in Resources */,
+				EAFDEB48219BF9D3005DA89F /* Assets.xcassets in Resources */,
+				EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFDEB4F219BF9D3005DA89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFDEB5A219BF9D3005DA89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAFDEB39219BF9D2005DA89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */,
+				EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */,
+				EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFDEB4D219BF9D3005DA89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAFDEB56219BF9D3005DA89F /* MerlinFourSquareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFDEB58219BF9D3005DA89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAFDEB61219BF9D3005DA89F /* MerlinFourSquareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAFDEB53219BF9D3005DA89F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAFDEB3C219BF9D2005DA89F /* MerlinFourSquare */;
+			targetProxy = EAFDEB52219BF9D3005DA89F /* PBXContainerItemProxy */;
+		};
+		EAFDEB5E219BF9D3005DA89F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAFDEB3C219BF9D2005DA89F /* MerlinFourSquare */;
+			targetProxy = EAFDEB5D219BF9D3005DA89F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EAFDEB44219BF9D2005DA89F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAFDEB45219BF9D2005DA89F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAFDEB49219BF9D3005DA89F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAFDEB4A219BF9D3005DA89F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAFDEB63219BF9D3005DA89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAFDEB64219BF9D3005DA89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAFDEB66219BF9D3005DA89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZNFXBD2B4;
+				INFOPLIST_FILE = MerlinFourSquare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merlinfoursquare.MerlinFourSquare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAFDEB67219BF9D3005DA89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZNFXBD2B4;
+				INFOPLIST_FILE = MerlinFourSquare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merlinfoursquare.MerlinFourSquare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EAFDEB69219BF9D3005DA89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZNFXBD2B4;
+				INFOPLIST_FILE = MerlinFourSquareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merlinfoursquare.MerlinFourSquareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MerlinFourSquare.app/MerlinFourSquare";
+			};
+			name = Debug;
+		};
+		EAFDEB6A219BF9D3005DA89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZNFXBD2B4;
+				INFOPLIST_FILE = MerlinFourSquareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merlinfoursquare.MerlinFourSquareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MerlinFourSquare.app/MerlinFourSquare";
+			};
+			name = Release;
+		};
+		EAFDEB6C219BF9D3005DA89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZNFXBD2B4;
+				INFOPLIST_FILE = MerlinFourSquareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merlinfoursquare.MerlinFourSquareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MerlinFourSquare;
+			};
+			name = Debug;
+		};
+		EAFDEB6D219BF9D3005DA89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZNFXBD2B4;
+				INFOPLIST_FILE = MerlinFourSquareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.merlinfoursquare.MerlinFourSquareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MerlinFourSquare;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAFDEB38219BF9D2005DA89F /* Build configuration list for PBXProject "MerlinFourSquare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAFDEB63219BF9D3005DA89F /* Debug */,
+				EAFDEB64219BF9D3005DA89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAFDEB65219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAFDEB66219BF9D3005DA89F /* Debug */,
+				EAFDEB67219BF9D3005DA89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAFDEB68219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAFDEB69219BF9D3005DA89F /* Debug */,
+				EAFDEB6A219BF9D3005DA89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAFDEB6B219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAFDEB6C219BF9D3005DA89F /* Debug */,
+				EAFDEB6D219BF9D3005DA89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAFDEB35219BF9D2005DA89F /* Project object */;
+}
