@@ -15,6 +15,8 @@
 		EAFDEB56219BF9D3005DA89F /* MerlinFourSquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB55219BF9D3005DA89F /* MerlinFourSquareTests.swift */; };
 		EAFDEB61219BF9D3005DA89F /* MerlinFourSquareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB60219BF9D3005DA89F /* MerlinFourSquareUITests.swift */; };
 		EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB6F219BF9F0005DA89F /* NetworkManager.swift */; };
+		EAFDEB72219EDDAF005DA89F /* FourSquareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB71219EDDAF005DA89F /* FourSquareAPI.swift */; };
+		EAFDEB74219EE992005DA89F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB73219EE992005DA89F /* Venue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		EAFDEB60219BF9D3005DA89F /* MerlinFourSquareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerlinFourSquareUITests.swift; sourceTree = "<group>"; };
 		EAFDEB62219BF9D3005DA89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAFDEB6F219BF9F0005DA89F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EAFDEB71219EDDAF005DA89F /* FourSquareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareAPI.swift; sourceTree = "<group>"; };
+		EAFDEB73219EE992005DA89F /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				EAFDEB6F219BF9F0005DA89F /* NetworkManager.swift */,
+				EAFDEB71219EDDAF005DA89F /* FourSquareAPI.swift */,
+				EAFDEB73219EE992005DA89F /* Venue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */,
+				EAFDEB74219EE992005DA89F /* Venue.swift in Sources */,
+				EAFDEB72219EDDAF005DA89F /* FourSquareAPI.swift in Sources */,
 				EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */,
 				EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */,
 			);
