@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias NetworkCompletionClosure = (_ responseDictionary: JSONObject?, _ error: Error?) -> Void
+typealias NetworkJSONObjectCompletionClosure = (_ responseDictionary: JSONObject?, _ error: Error?) -> Void
+typealias NetworkDataCompletionClosure = (_ data: Data?,_ error: Error?) -> Void
 typealias JSONObject = [String: Any]
 
 private enum FourSquareServer {
@@ -20,27 +21,11 @@ private enum RequestParameters {
     static let timeOutInterval = TimeInterval(60)
 }
 
-enum FourSquareEndPoint {
-    static let searchVenues = "venues/search?"
-}
-
-enum FourSquareKeys {
-    static let client_id = "IJEWNYNTYDJ4SUU00FO0CTSW50IDXWPG2MIZLBPG5WEL4TXQ"
-    static let client_secret = "SX0RDDTIAF1RZXBFVITY0SK2M0XZUMKDNYR5MDDPILT5BGGN"
-}
-
-
 class NetworkManager {
-    static func performStandartRequest(endpoint: String, parameters: JSONObject, completion: @escaping NetworkCompletionClosure) {
+    static func performJSONObjectStandartRequest(endpoint: String, parameters: JSONObject, completion: @escaping NetworkJSONObjectCompletionClosure) {
+                //let urlString = "https://api.foursquare.com/v2/venues/search?ll=4.592000,-74.158767&client_id=IJEWNYNTYDJ4SUU00FO0CTSW50IDXWPG2MIZLBPG5WEL4TXQ&client_secret=SX0RDDTIAF1RZXBFVITY0SK2M0XZUMKDNYR5MDDPILT5BGGN&v=20181116&intent=checkin"
         
-        var finalURLString = FourSquareServer.production + endpoint
-        
-        for (key, value) in parameters {
-            finalURLString += "&\(key)=\(value)"
-        }
-        
-        
-        //let urlString = "https://api.foursquare.com/v2/venues/search?ll=4.592000,-74.158767&client_id=IJEWNYNTYDJ4SUU00FO0CTSW50IDXWPG2MIZLBPG5WEL4TXQ&client_secret=SX0RDDTIAF1RZXBFVITY0SK2M0XZUMKDNYR5MDDPILT5BGGN&v=20181116&intent=checkin"
+        let finalURLString = createURLString(endpoint: endpoint, parameters: parameters)
         
         guard
             let url = URL(string: finalURLString)
@@ -50,6 +35,38 @@ class NetworkManager {
         
         var request = URLRequest(url: url)
         request.timeoutInterval = RequestParameters.timeOutInterval
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard
+                let data = data,
+                let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONObject
+            else {
+                DispatchQueue.main.async(execute: {
+                    completion(nil, error)
+                })
+                return
+            }
+            
+            DispatchQueue.main.async(execute: {
+                completion(dataDictionary, error)
+            })
+        }
+        
+        task.resume()
+    }
+    
+    static func performDataStandartRequest(endpoint: String, parameters: JSONObject, completion: @escaping NetworkDataCompletionClosure) {
+        let finalURLString = createURLString(endpoint: endpoint, parameters: parameters)
+        
+        guard
+            let url = URL(string: finalURLString)
+        else {
+            return //Handle this please
+        }
+        
+        var request = URLRequest(url: url)
+        request.timeoutInterval = RequestParameters.timeOutInterval
+        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard
                 let data = data
@@ -60,66 +77,22 @@ class NetworkManager {
                 return
             }
             
-            guard
-                let dataDictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONObject
-            else {
-                DispatchQueue.main.async(execute: {
-                    completion(nil, error)
-                })
-                return
-            }
-
-            print(dataDictionary)
-            print(dataDictionary?.prettyPrint())
-            
             DispatchQueue.main.async(execute: {
-                completion(dataDictionary, error)
+                completion(data, error)
             })
-            
-            
-            /*
-             if let
-             dataDictionary = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? JSONObject,
-             let responseDictionary = dataDictionary?[APIResponseKey.response] as? JSONObject {
-             performOnMainThread({
-             completion(responseDictionary,nil)
-             })
-             } else {
-             performOnMainThread({
-             completion(nil, NSError(error: TockAllCityError.unknown))
-             })
-             */
-            
         }
         
         task.resume()
     }
-}
-
-extension Dictionary where Key == String, Value == Any {
-    func prettyPrint() -> String{
-        var string: String = ""
-        if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted){
-            if let nstr = NSString(data: data, encoding: String.Encoding.utf8.rawValue){
-                string = nstr as String
-            }
+    
+    private static func createURLString(endpoint: String, parameters: JSONObject) -> String {
+        var finalURLString = FourSquareServer.production + endpoint
+        
+        for (key, value) in parameters {
+            finalURLString += "&\(key)=\(value)"
         }
-        return string
+        
+        return finalURLString
     }
 }
 
-
-struct FourSquareResponse: Decodable {
-    let meta: FourSquareMeta
-    let response: FourSquareDataResponse
-}
-
-struct FourSquareMeta: Decodable {
-    let requestID: String
-    let code: Int
-}
-
-struct FourSquareDataResponse: Decodable {
-    let confident: Bool
-    let venues: [Venues]
-}

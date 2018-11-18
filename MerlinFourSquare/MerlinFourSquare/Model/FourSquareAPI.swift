@@ -9,24 +9,50 @@
 import Foundation
 import CoreLocation
 
-typealias FourSquareAPICompletionClosure = (_ response: [Venues]?, _ error: Error?) -> Void
+typealias FourSquareAPICompletionClosure = (_ response: [Venue]?, _ error: Error?) -> Void
+
+enum FourSquareRequestCodes {
+    static let successCode = 200
+}
 
 class FourSquareAPI {
     func fetchNearbyVenues(location: CLLocation, completion: @escaping FourSquareAPICompletionClosure) {
-        let parameters = fetchVenuesParameters(location: location, dateString: "20181110")
+        let parameters = fetchVenuesParameters(location: location, dateString: "20181110")//Improve this
         
-        NetworkManager.performStandartRequest(endpoint: FourSquareEndPoint.searchVenues, parameters: parameters) { (responseDictionary, error) in
+        NetworkManager.performDataStandartRequest(endpoint: FourSquareEndPoint.searchVenues, parameters: parameters) { (responseData, error) in
+            guard
+                let data = responseData,
+                let fourSquareResponse = try? JSONDecoder().decode(FourSquareResponse.self, from: data)
+            else {
+                completion(nil, error)//Hanlde error please
+                return
+            }
             
+            if self.isErrorRequest(meta: fourSquareResponse.meta) {
+                completion(nil, error) //Error from foursquare API
+            } else {
+                completion(fourSquareResponse.response.venues, nil)
+            }
         }
     }
+    
+    func isErrorRequest(meta: FourSquareMeta) -> Bool {
+        let isSuccess = meta.code != FourSquareRequestCodes.successCode
+        return isSuccess
+    }
+    
+    func processMetaResponse(meta: FourSquareMeta) {
+        
+    }
+    
     
     private func fetchVenuesParameters(location: CLLocation, dateString: String) -> JSONObject {
         var parameters = JSONObject()
         parameters[Key.Parameters.location] = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
-        parameters[Key.Parameters.clientIdentifier] = FourSquareKeys.client_id
-        parameters[Key.Parameters.clientSecret] = FourSquareKeys.client_secret
+        parameters[Key.Parameters.clientIdentifier] = FourSquareKeys.clientIdentifier
+        parameters[Key.Parameters.clientSecret] = FourSquareKeys.clientSecret
         parameters[Key.Parameters.date] = dateString
-        parameters[Key.Parameters.intent] = "checkin"
+        parameters[Key.Parameters.intent] = FourSquareEndPoint.intentCheckin
         return parameters
     }
     
