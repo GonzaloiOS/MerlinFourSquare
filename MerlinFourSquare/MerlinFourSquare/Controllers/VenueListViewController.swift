@@ -15,9 +15,10 @@ struct VenueListViewControllerConfig {
     static let accpetButtonText = "Ok"
     static let errorText = "Error"
     static let errorMessage = "Try again please"
-    static let actionLocation = "Activate location services and then deload"
+    static let actionLocation = "Activate location services and try again"
     static let collectionViewCellHeight = CGFloat(180)
     static let sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    static let collectionViewCellWidth = ((UIScreen.main.bounds.width - 60) / 2)
 }
 
 class VenueListViewController: UIViewController {
@@ -93,7 +94,7 @@ class VenueListViewController: UIViewController {
     private func createflowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: ((UIScreen.main.bounds.width - 60) / 2), height: VenueListViewControllerConfig.collectionViewCellHeight)
+        layout.itemSize = CGSize(width: VenueListViewControllerConfig.collectionViewCellWidth, height: VenueListViewControllerConfig.collectionViewCellHeight)
         layout.sectionInset = VenueListViewControllerConfig.sectionInset
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
@@ -184,6 +185,4 @@ extension VenueListViewController: CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
     }
-    
-    
 }

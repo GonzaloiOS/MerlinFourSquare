@@ -18,10 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmi-bd-Vlq">
-                                <rect key="frame" x="157" y="282" width="60" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmi-bd-Vlq">
+                                <rect key="frame" x="40" y="285" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0eS-R6-a9i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Venues"/>
                                 <connections>
                                     <action selector="venuesTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2W-h9-9zt"/>
@@ -33,9 +35,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB5-zM-lbV">
-                                <rect key="frame" x="168" y="383" width="39" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB5-zM-lbV">
+                                <rect key="frame" x="40" y="399" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MmL-xm-fUz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Map"/>
                                 <connections>
@@ -45,14 +49,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Jmi-bd-Vlq" firstAttribute="top" secondItem="FxL-cy-R8Q" secondAttribute="bottom" constant="140" id="1xu-ZL-xZX"/>
+                            <constraint firstItem="Jmi-bd-Vlq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="9WJ-LK-RWJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FxL-cy-R8Q" secondAttribute="trailing" constant="39.5" id="BYv-iC-O0d"/>
+                            <constraint firstItem="qB5-zM-lbV" firstAttribute="top" secondItem="Jmi-bd-Vlq" secondAttribute="bottom" constant="64" id="Dm6-Bg-OZo"/>
                             <constraint firstItem="FxL-cy-R8Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39.5" id="HVI-Ed-hDM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qB5-zM-lbV" secondAttribute="trailing" constant="40" id="PbJ-1y-tyc"/>
+                            <constraint firstItem="qB5-zM-lbV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="h9H-yn-7PH"/>
                             <constraint firstItem="FxL-cy-R8Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mpe-sN-mEH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jmi-bd-Vlq" secondAttribute="trailing" constant="40" id="sHX-UB-TRU"/>
                             <constraint firstItem="FxL-cy-R8Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="w02-yo-9QM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="CP6-HT-Y8Q"/>
+                    <connections>
+                        <outlet property="mapButtton" destination="qB5-zM-lbV" id="8vx-mb-3yP"/>
+                        <outlet property="venueListButton" destination="Jmi-bd-Vlq" id="fJw-H1-A3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7D-ms-hUn" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -122,7 +136,7 @@
                             <constraint firstItem="z7D-ms-hUn" firstAttribute="leading" secondItem="as4-16-UiN" secondAttribute="leading" id="1Dc-RK-mao"/>
                             <constraint firstItem="as4-16-UiN" firstAttribute="trailing" secondItem="z7D-ms-hUn" secondAttribute="trailing" id="BmD-Zo-A2e"/>
                             <constraint firstItem="as4-16-UiN" firstAttribute="bottom" secondItem="z7D-ms-hUn" secondAttribute="bottom" id="grV-nD-c4E"/>
-                            <constraint firstItem="z7D-ms-hUn" firstAttribute="top" secondItem="as4-16-UiN" secondAttribute="top" constant="10" id="pAP-wh-6WG"/>
+                            <constraint firstItem="z7D-ms-hUn" firstAttribute="top" secondItem="as4-16-UiN" secondAttribute="top" id="pAP-wh-6WG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="as4-16-UiN"/>
                     </view>

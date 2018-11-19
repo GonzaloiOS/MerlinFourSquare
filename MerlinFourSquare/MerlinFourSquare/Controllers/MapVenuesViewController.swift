@@ -59,7 +59,7 @@ class MapVenuesViewController: UIViewController {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        FourSquareAPI().fetchNearbyVenues(location: location) { (responseVenues, error) in
+        FourSquareAPI().fetchNearbyMapVenues(location: location) { (responseVenues, error) in
              UIApplication.shared.isNetworkActivityIndicatorVisible = false
             guard
                 let venues = responseVenues

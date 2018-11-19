@@ -30,7 +30,7 @@ class FourSquareAPI {
         
         let dateString = currentDate()
         
-        let parameters = fetchVenuesParameters(location: location, dateString: dateString)//Improve this
+        let parameters = fetchVenuesParameters(location: location, dateString: dateString)
         
         NetworkManager.performJSONObjectStandartRequest(endpoint: FourSquareEndPoint.searchVenues, parameters: parameters) { (responseDictionary, error) in
             guard
@@ -49,9 +49,37 @@ class FourSquareAPI {
         }
     }
     
-    func isErrorRequest(meta: FourSquareMeta) -> Bool {
+    
+    func fetchNearbyMapVenues(location: CLLocation, completion: @escaping FourSquareAPICompletionClosure) {
+        let dateString = currentDate()
+        let parameters = fetchVenuesParameters(location: location, dateString: dateString)
+        
+        NetworkManager.performJSONObjectStandartRequest(endpoint: FourSquareEndPoint.searchVenues, parameters: parameters) { (responseDictionary, error) in
+            guard
+                let dictionary = responseDictionary,
+                let fourSquareResponse = FourSquareResponse(dictionary: dictionary)
+                else {
+                    completion(nil, FourSquareMerlinError.services)
+                    return
+            }
+            
+            if self.isErrorRequest(meta: fourSquareResponse.meta) {
+                completion(nil, FourSquareMerlinError.services)
+            } else {
+                let sortVenues = self.sortDescendantArray(venues: fourSquareResponse.response.venues)
+                completion(sortVenues, nil)
+            }
+        }
+    }
+    
+    private func isErrorRequest(meta: FourSquareMeta) -> Bool {
         let isSuccess = meta.code != FourSquareRequestCodes.successCode
         return isSuccess
+    }
+    
+    private func sortDescendantArray(venues: [Venue]) -> [Venue] {
+        let sorting = venues.sorted(by: { $0.location.distance < $1.location.distance })
+        return sorting
     }
     
     private func currentDate() -> String {

@@ -10,7 +10,9 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var venueListButton: UIButton!
+    @IBOutlet weak var mapButtton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInterface()
