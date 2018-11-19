@@ -46,6 +46,7 @@ class VenueListViewController: UIViewController {
     
     private func setupInterface() {
         view.backgroundColor = UIColor.white
+        navigationItem.title = "Venues"
         setupCollectionView()
         setupActivityIndicator()
     }

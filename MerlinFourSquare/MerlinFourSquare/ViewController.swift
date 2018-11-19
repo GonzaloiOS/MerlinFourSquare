@@ -13,13 +13,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupInterface()
+    }
+    
+    private func setupInterface() {
+        navigationItem.title = "Welcome"
     }
 
     @IBAction func venuesTapped() {
         guard let venueListController = storyboard?.instantiateViewController(withIdentifier: "VenueListViewController") as? VenueListViewController else { return }
-        
-        present(venueListController, animated: true, completion: nil)
+        navigationController?.pushViewController(venueListController, animated: true)
+        //present(venueListController, animated: true, completion: nil)
     }
     
     
