@@ -51,7 +51,32 @@ class MapVenuesViewController: UIViewController {
     }
     
     private func setupInterface() {
-        view.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
+        view.backgroundColor = UIColor.gray.withAlphaComponent(0.7)
+    }
+    
+    private func setupData() {
+        guard let location = currentLocation else { return }
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        FourSquareAPI().fetchNearbyVenues(location: location) { (responseVenues, error) in
+             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            guard
+                let venues = responseVenues
+            else {
+                print("Error")
+                return
+            }
+            
+            self.createMarkersFromVenuesData(venues: venues)
+        }
+    }
+    
+    private func createMarkersFromVenuesData(venues: [Venue]) {
+        for venue in venues {
+            let location = CLLocation(latitude: venue.location.lat, longitude: venue.location.lng)
+            self.createMarker(location: location, title: venue.name)
+        }
     }
     
     private func setupGoogleMaps() {
@@ -85,7 +110,6 @@ class MapVenuesViewController: UIViewController {
         let marker = GMSMarker()
         marker.position = location.coordinate
         marker.title = MapVenuesViewControllerConfig.meText
-        //marker.snippet = "here"
         marker.icon = GMSMarker.markerImage(with: .blue)
         marker.map = mapView
     }
@@ -95,6 +119,7 @@ class MapVenuesViewController: UIViewController {
         marker.position = location.coordinate
         marker.title = title
         marker.icon = GMSMarker.markerImage(with: .cyan)
+        marker.appearAnimation = .pop
         marker.map = mapView
     }
     
@@ -110,6 +135,7 @@ extension MapVenuesViewController: CLLocationManagerDelegate {
         if currentLocation == nil {
             currentLocation = location
             setupGoogleMaps()
+            setupData()
         }
         
         locationManager.stopUpdatingLocation()
