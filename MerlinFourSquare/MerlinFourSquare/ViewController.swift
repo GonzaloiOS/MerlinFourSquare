@@ -13,21 +13,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let location = CLLocation(latitude: 4.591965, longitude: -74.158788)
-        FourSquareAPI().fetchNearbyVenues(location: location) { (venues, error) in
-            
-            guard
-                let currentVenues = venues
-            else {
-                print("Error Venues")
-                return
-            }
-            
-            print(currentVenues)
-        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func venuesTapped() {
+        guard let venueListController = storyboard?.instantiateViewController(withIdentifier: "VenueListViewController") as? VenueListViewController else { return }
+        
+        present(venueListController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func mapTapped() {
+        print("WIP")
+        
+    }
+    
 }
 

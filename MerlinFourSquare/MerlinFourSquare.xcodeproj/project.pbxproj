@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		EA925E5621A1F07400F56BEA /* FourSquareEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E5521A1F07300F56BEA /* FourSquareEndpoint.swift */; };
 		EA925E5921A1F16B00F56BEA /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E5821A1F16B00F56BEA /* Dictionary+Extension.swift */; };
+		EA925E5C21A1FA1D00F56BEA /* VenueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E5B21A1FA1D00F56BEA /* VenueListViewController.swift */; };
+		EA925E6321A1FE5700F56BEA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E6221A1FE5700F56BEA /* UIView+Extension.swift */; };
+		EA925E6821A2248500F56BEA /* VenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E6621A2248500F56BEA /* VenueCollectionViewCell.swift */; };
+		EA925E6921A2248500F56BEA /* VenueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA925E6721A2248500F56BEA /* VenueCollectionViewCell.xib */; };
 		EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */; };
 		EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB42219BF9D2005DA89F /* ViewController.swift */; };
 		EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFDEB44219BF9D2005DA89F /* Main.storyboard */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		EA925E5521A1F07300F56BEA /* FourSquareEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareEndpoint.swift; sourceTree = "<group>"; };
 		EA925E5821A1F16B00F56BEA /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		EA925E5B21A1FA1D00F56BEA /* VenueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewController.swift; sourceTree = "<group>"; };
+		EA925E6221A1FE5700F56BEA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		EA925E6621A2248500F56BEA /* VenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA925E6721A2248500F56BEA /* VenueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueCollectionViewCell.xib; sourceTree = "<group>"; };
 		EAFDEB3D219BF9D2005DA89F /* MerlinFourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerlinFourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAFDEB42219BF9D2005DA89F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,8 +96,26 @@
 			isa = PBXGroup;
 			children = (
 				EA925E5821A1F16B00F56BEA /* Dictionary+Extension.swift */,
+				EA925E6221A1FE5700F56BEA /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA925E5A21A1F9FE00F56BEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA925E5B21A1FA1D00F56BEA /* VenueListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EA925E5D21A1FBAC00F56BEA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EA925E6621A2248500F56BEA /* VenueCollectionViewCell.swift */,
+				EA925E6721A2248500F56BEA /* VenueCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EAFDEB34219BF9D2005DA89F = {
@@ -115,6 +141,8 @@
 		EAFDEB3F219BF9D2005DA89F /* MerlinFourSquare */ = {
 			isa = PBXGroup;
 			children = (
+				EA925E5D21A1FBAC00F56BEA /* Cells */,
+				EA925E5A21A1F9FE00F56BEA /* Controllers */,
 				EA925E5721A1F13E00F56BEA /* Extensions */,
 				EAFDEB6E219BF9DF005DA89F /* Model */,
 				EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */,
@@ -262,6 +290,7 @@
 			files = (
 				EAFDEB4B219BF9D3005DA89F /* LaunchScreen.storyboard in Resources */,
 				EAFDEB48219BF9D3005DA89F /* Assets.xcassets in Resources */,
+				EA925E6921A2248500F56BEA /* VenueCollectionViewCell.xib in Resources */,
 				EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,10 +318,13 @@
 			files = (
 				EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */,
 				EA925E5921A1F16B00F56BEA /* Dictionary+Extension.swift in Sources */,
+				EA925E6821A2248500F56BEA /* VenueCollectionViewCell.swift in Sources */,
 				EAFDEB74219EE992005DA89F /* Venue.swift in Sources */,
 				EAFDEB72219EDDAF005DA89F /* FourSquareAPI.swift in Sources */,
 				EA925E5621A1F07400F56BEA /* FourSquareEndpoint.swift in Sources */,
 				EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */,
+				EA925E5C21A1FA1D00F56BEA /* VenueListViewController.swift in Sources */,
+				EA925E6321A1FE5700F56BEA /* UIView+Extension.swift in Sources */,
 				EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
