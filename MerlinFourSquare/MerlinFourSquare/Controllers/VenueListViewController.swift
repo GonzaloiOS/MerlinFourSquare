@@ -9,6 +9,11 @@
 import UIKit
 import CoreLocation
 
+struct VenueListViewControllerConfig {
+    static let imageSize64 = "64"
+    static let venuesText = "Venues"
+}
+
 class VenueListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,6 +24,7 @@ class VenueListViewController: UIViewController {
     }()
     
     var collectionViewData = [Venue]()
+    var cachedImage = [String: UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +52,7 @@ class VenueListViewController: UIViewController {
     
     private func setupInterface() {
         view.backgroundColor = UIColor.white
-        navigationItem.title = "Venues"
+        navigationItem.title = VenueListViewControllerConfig.venuesText
         setupCollectionView()
         setupActivityIndicator()
     }
@@ -87,6 +93,24 @@ extension VenueListViewController: UICollectionViewDataSource {
         guard let cell = collectionViewCell as? VenueCollectionViewCell else { return collectionViewCell }
         let item = collectionViewData[indexPath.row]
         cell.setupCell(venue: item)
+        
+        guard let iconCharacteristics = item.categories.first?.icon else { return cell }
+        
+        let imageURL = iconCharacteristics.prefix + VenueListViewControllerConfig.imageSize64 + iconCharacteristics.suffix
+        
+        if let cachedImage = cachedImage[imageURL] {
+            cell.iconImageView.image = cachedImage
+        } else {
+            cell.tag = indexPath.row
+            guard let url = URL(string: imageURL) else { return cell }
+            NetworkManager.downloadImageFromURL(url: url) { (image) in
+                self.cachedImage[imageURL] = image
+                
+                if cell.tag == indexPath.row {
+                    cell.iconImageView.image = image
+                }
+            }
+        }
         
         return cell
     }

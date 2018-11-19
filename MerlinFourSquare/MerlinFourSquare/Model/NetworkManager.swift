@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 typealias NetworkJSONObjectCompletionClosure = (_ responseDictionary: JSONObject?, _ error: Error?) -> Void
 typealias NetworkDataCompletionClosure = (_ data: Data?,_ error: Error?) -> Void
+typealias NetworkDownloadImageCompletionClosure = (_ image: UIImage?) -> Void
+
 typealias JSONObject = [String: Any]
 
 private enum FourSquareServer {
@@ -79,6 +82,27 @@ class NetworkManager {
             
             DispatchQueue.main.async(execute: {
                 completion(data, error)
+            })
+        }
+        
+        task.resume()
+    }
+    
+    static func downloadImageFromURL(url: URL, completion: @escaping NetworkDownloadImageCompletionClosure) {
+        let task = URLSession.shared.dataTask(with: url) { (responseData, response, error) in
+            guard
+                let data = responseData
+            else {
+                DispatchQueue.main.async(execute: {
+                    completion(nil)
+                })
+                return
+            }
+            
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async(execute: {
+                completion(image)
             })
         }
         

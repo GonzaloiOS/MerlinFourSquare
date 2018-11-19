@@ -13,6 +13,9 @@ struct VenueCollectionViewCellConfig {
     static let nameLabelFontSize = CGFloat(14)
     static let detailFontSize = CGFloat(13)
     static let distanceFontSize = CGFloat(12)
+    static let borderWidth = CGFloat(2)
+    static let blueColor1 = UIColor(red:0.21, green:0.64, blue:0.79, alpha:1.0)
+    static let blueColor2 = UIColor.blue.withAlphaComponent(0.1)
 }
 
 
@@ -44,10 +47,10 @@ class VenueCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupImageView() {
-        iconImageView.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
+        iconImageView.backgroundColor = VenueCollectionViewCellConfig.blueColor1
         iconImageView.clipsToBounds = true
-        iconImageView.layer.borderColor = UIColor(red:0.21, green:0.64, blue:0.79, alpha:1.0).cgColor
-        iconImageView.layer.borderWidth = 2
+        iconImageView.layer.borderColor = VenueCollectionViewCellConfig.blueColor2.cgColor
+        iconImageView.layer.borderWidth = VenueCollectionViewCellConfig.borderWidth
     }
     
     private func setupNameLabel() {

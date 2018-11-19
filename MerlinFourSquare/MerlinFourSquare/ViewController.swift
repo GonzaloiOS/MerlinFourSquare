@@ -21,9 +21,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func venuesTapped() {
-        guard let venueListController = storyboard?.instantiateViewController(withIdentifier: "VenueListViewController") as? VenueListViewController else { return }
+        let controllerName = String(describing: VenueListViewController.self)
+        guard let venueListController = storyboard?.instantiateViewController(withIdentifier: controllerName) as? VenueListViewController else { return }
         navigationController?.pushViewController(venueListController, animated: true)
-        //present(venueListController, animated: true, completion: nil)
     }
     
     
@@ -31,6 +31,5 @@ class ViewController: UIViewController {
         print("WIP")
         
     }
-    
 }
 
