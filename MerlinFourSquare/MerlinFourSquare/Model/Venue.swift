@@ -33,6 +33,7 @@ struct Venue: Decodable {
     let name: String
     let location: FourSquareLocation
     let referralId: String
+    let venuePage: String?
 }
 
 
@@ -52,18 +53,19 @@ struct Icon: Decodable {
 }
 
 struct FourSquareLocation: Decodable {
+    let neighborhood: String?
     let crossStreet: String?
     let address: String?
     let state: String?
     let city: String?
     let distance: Int
     let postalCode: String?
-    let country: String
+    let country: String?
     let formattedAddress: [String]
     let lat: Double
     let lng: Double
     let labeledLatLngs: [LabeledLatLngs]
-    let cc: String
+    let cc: String?
     
 }
 
