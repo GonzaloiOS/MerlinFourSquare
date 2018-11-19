@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786F9CADA92ECBBFB6784DD9 /* Pods_MerlinFourSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829DC52DD7E7C91E42473013 /* Pods_MerlinFourSquare.framework */; };
 		EA925E5621A1F07400F56BEA /* FourSquareEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E5521A1F07300F56BEA /* FourSquareEndpoint.swift */; };
 		EA925E5921A1F16B00F56BEA /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E5821A1F16B00F56BEA /* Dictionary+Extension.swift */; };
 		EA925E5C21A1FA1D00F56BEA /* VenueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E5B21A1FA1D00F56BEA /* VenueListViewController.swift */; };
 		EA925E6321A1FE5700F56BEA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E6221A1FE5700F56BEA /* UIView+Extension.swift */; };
 		EA925E6821A2248500F56BEA /* VenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA925E6621A2248500F56BEA /* VenueCollectionViewCell.swift */; };
 		EA925E6921A2248500F56BEA /* VenueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA925E6721A2248500F56BEA /* VenueCollectionViewCell.xib */; };
+		EAD4C76821A2797500E8308A /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = EAD4C76721A2797500E8308A /* podfile */; };
+		EAD4C76A21A279D100E8308A /* MapVenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C76921A279D100E8308A /* MapVenuesViewController.swift */; };
+		EAD4C76C21A27A4600E8308A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C76B21A27A4600E8308A /* UIViewController+Extension.swift */; };
 		EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */; };
 		EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB42219BF9D2005DA89F /* ViewController.swift */; };
 		EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFDEB44219BF9D2005DA89F /* Main.storyboard */; };
@@ -43,12 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075F03505A00D4AD7090B994 /* Pods-MerlinFourSquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerlinFourSquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-MerlinFourSquare/Pods-MerlinFourSquare.release.xcconfig"; sourceTree = "<group>"; };
+		229420726D6A079B2516AE2B /* Pods-MerlinFourSquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerlinFourSquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MerlinFourSquare/Pods-MerlinFourSquare.debug.xcconfig"; sourceTree = "<group>"; };
+		829DC52DD7E7C91E42473013 /* Pods_MerlinFourSquare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MerlinFourSquare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA925E5521A1F07300F56BEA /* FourSquareEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareEndpoint.swift; sourceTree = "<group>"; };
 		EA925E5821A1F16B00F56BEA /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		EA925E5B21A1FA1D00F56BEA /* VenueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueListViewController.swift; sourceTree = "<group>"; };
 		EA925E6221A1FE5700F56BEA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EA925E6621A2248500F56BEA /* VenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA925E6721A2248500F56BEA /* VenueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueCollectionViewCell.xib; sourceTree = "<group>"; };
+		EAD4C76721A2797500E8308A /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		EAD4C76921A279D100E8308A /* MapVenuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVenuesViewController.swift; sourceTree = "<group>"; };
+		EAD4C76B21A27A4600E8308A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		EAFDEB3D219BF9D2005DA89F /* MerlinFourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerlinFourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAFDEB42219BF9D2005DA89F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786F9CADA92ECBBFB6784DD9 /* Pods_MerlinFourSquare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,11 +103,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30E9BBC862B5400BE5708178 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				829DC52DD7E7C91E42473013 /* Pods_MerlinFourSquare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45E028A665D9086CA3CB42A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				229420726D6A079B2516AE2B /* Pods-MerlinFourSquare.debug.xcconfig */,
+				075F03505A00D4AD7090B994 /* Pods-MerlinFourSquare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EA925E5721A1F13E00F56BEA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				EA925E5821A1F16B00F56BEA /* Dictionary+Extension.swift */,
 				EA925E6221A1FE5700F56BEA /* UIView+Extension.swift */,
+				EAD4C76B21A27A4600E8308A /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -105,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				EA925E5B21A1FA1D00F56BEA /* VenueListViewController.swift */,
+				EAD4C76921A279D100E8308A /* MapVenuesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,10 +151,13 @@
 		EAFDEB34219BF9D2005DA89F = {
 			isa = PBXGroup;
 			children = (
+				EAD4C76721A2797500E8308A /* podfile */,
 				EAFDEB3F219BF9D2005DA89F /* MerlinFourSquare */,
 				EAFDEB54219BF9D3005DA89F /* MerlinFourSquareTests */,
 				EAFDEB5F219BF9D3005DA89F /* MerlinFourSquareUITests */,
 				EAFDEB3E219BF9D2005DA89F /* Products */,
+				45E028A665D9086CA3CB42A3 /* Pods */,
+				30E9BBC862B5400BE5708178 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAFDEB65219BF9D3005DA89F /* Build configuration list for PBXNativeTarget "MerlinFourSquare" */;
 			buildPhases = (
+				0DB1486EBCCB0DB5D5CF582B /* [CP] Check Pods Manifest.lock */,
 				EAFDEB39219BF9D2005DA89F /* Sources */,
 				EAFDEB3A219BF9D2005DA89F /* Frameworks */,
 				EAFDEB3B219BF9D2005DA89F /* Resources */,
+				D60514742B9B9E289BF99B59 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,6 +325,7 @@
 			files = (
 				EAFDEB4B219BF9D3005DA89F /* LaunchScreen.storyboard in Resources */,
 				EAFDEB48219BF9D3005DA89F /* Assets.xcassets in Resources */,
+				EAD4C76821A2797500E8308A /* podfile in Resources */,
 				EA925E6921A2248500F56BEA /* VenueCollectionViewCell.xib in Resources */,
 				EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */,
 			);
@@ -311,13 +347,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DB1486EBCCB0DB5D5CF582B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MerlinFourSquare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D60514742B9B9E289BF99B59 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MerlinFourSquare/Pods-MerlinFourSquare-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MerlinFourSquare/Pods-MerlinFourSquare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EAFDEB39219BF9D2005DA89F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD4C76C21A27A4600E8308A /* UIViewController+Extension.swift in Sources */,
 				EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */,
 				EA925E5921A1F16B00F56BEA /* Dictionary+Extension.swift in Sources */,
+				EAD4C76A21A279D100E8308A /* MapVenuesViewController.swift in Sources */,
 				EA925E6821A2248500F56BEA /* VenueCollectionViewCell.swift in Sources */,
 				EAFDEB74219EE992005DA89F /* Venue.swift in Sources */,
 				EAFDEB72219EDDAF005DA89F /* FourSquareAPI.swift in Sources */,
@@ -498,6 +583,7 @@
 		};
 		EAFDEB66219BF9D3005DA89F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 229420726D6A079B2516AE2B /* Pods-MerlinFourSquare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,6 +603,7 @@
 		};
 		EAFDEB67219BF9D3005DA89F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 075F03505A00D4AD7090B994 /* Pods-MerlinFourSquare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

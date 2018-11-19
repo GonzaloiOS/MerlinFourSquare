@@ -23,13 +23,18 @@ class ViewController: UIViewController {
     @IBAction func venuesTapped() {
         let controllerName = String(describing: VenueListViewController.self)
         guard let venueListController = storyboard?.instantiateViewController(withIdentifier: controllerName) as? VenueListViewController else { return }
-        navigationController?.pushViewController(venueListController, animated: true)
+        presentNextController(controller: venueListController)
     }
     
     
     @IBAction func mapTapped() {
-        print("WIP")
-        
+        let controllerName = String(describing: MapVenuesViewController.self)
+        guard let mapVenueController = storyboard?.instantiateViewController(withIdentifier: controllerName) as? MapVenuesViewController else { return }
+        presentNextController(controller: mapVenueController)
+    }
+    
+    private func presentNextController(controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

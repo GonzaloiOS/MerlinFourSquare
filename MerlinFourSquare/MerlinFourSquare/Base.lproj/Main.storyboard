@@ -104,6 +104,36 @@
             </objects>
             <point key="canvasLocation" x="1922" y="134"/>
         </scene>
+        <!--Map Venues View Controller-->
+        <scene sceneID="BLX-Hq-Tc8">
+            <objects>
+                <viewController storyboardIdentifier="MapVenuesViewController" id="peg-oQ-mvW" customClass="MapVenuesViewController" customModule="MerlinFourSquare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xTU-qO-uDv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7D-ms-hUn" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z7D-ms-hUn" firstAttribute="leading" secondItem="as4-16-UiN" secondAttribute="leading" id="1Dc-RK-mao"/>
+                            <constraint firstItem="as4-16-UiN" firstAttribute="trailing" secondItem="z7D-ms-hUn" secondAttribute="trailing" id="BmD-Zo-A2e"/>
+                            <constraint firstItem="as4-16-UiN" firstAttribute="bottom" secondItem="z7D-ms-hUn" secondAttribute="bottom" id="grV-nD-c4E"/>
+                            <constraint firstItem="z7D-ms-hUn" firstAttribute="top" secondItem="as4-16-UiN" secondAttribute="top" constant="10" id="pAP-wh-6WG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="as4-16-UiN"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="z7D-ms-hUn" id="oDD-Sd-yL5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxy-8m-SgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="134"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="K1h-8O-w99">
             <objects>
