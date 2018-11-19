@@ -26,8 +26,6 @@ private enum RequestParameters {
 
 class NetworkManager {
     static func performJSONObjectStandartRequest(endpoint: String, parameters: JSONObject, completion: @escaping NetworkJSONObjectCompletionClosure) {
-                //let urlString = "https://api.foursquare.com/v2/venues/search?ll=4.592000,-74.158767&client_id=IJEWNYNTYDJ4SUU00FO0CTSW50IDXWPG2MIZLBPG5WEL4TXQ&client_secret=SX0RDDTIAF1RZXBFVITY0SK2M0XZUMKDNYR5MDDPILT5BGGN&v=20181116&intent=checkin"
-        
         let finalURLString = createURLString(endpoint: endpoint, parameters: parameters)
         
         guard
@@ -58,6 +56,7 @@ class NetworkManager {
         task.resume()
     }
     
+    //For future develop, if dont use it please remove"
     static func performDataStandartRequest(endpoint: String, parameters: JSONObject, completion: @escaping NetworkDataCompletionClosure) {
         let finalURLString = createURLString(endpoint: endpoint, parameters: parameters)
         

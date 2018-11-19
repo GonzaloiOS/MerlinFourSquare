@@ -11,25 +11,38 @@ import CoreLocation
 
 typealias FourSquareAPICompletionClosure = (_ response: [Venue]?, _ error: Error?) -> Void
 
+struct FourSquareAPIConfig {
+    static let foursquareDateStringFormat = "yyyyMMdd"
+}
+
 enum FourSquareRequestCodes {
     static let successCode = 200
 }
 
+enum FourSquareMerlinError: Error {
+    case services
+    case internet
+    case decodable
+}
+
 class FourSquareAPI {
     func fetchNearbyVenues(location: CLLocation, completion: @escaping FourSquareAPICompletionClosure) {
-        let parameters = fetchVenuesParameters(location: location, dateString: "20181110")//Improve this
         
-        NetworkManager.performDataStandartRequest(endpoint: FourSquareEndPoint.searchVenues, parameters: parameters) { (responseData, error) in
+        let dateString = currentDate()
+        
+        let parameters = fetchVenuesParameters(location: location, dateString: dateString)//Improve this
+        
+        NetworkManager.performJSONObjectStandartRequest(endpoint: FourSquareEndPoint.searchVenues, parameters: parameters) { (responseDictionary, error) in
             guard
-                let data = responseData,
-                let fourSquareResponse = try? JSONDecoder().decode(FourSquareResponse.self, from: data)
+                let dictionary = responseDictionary,
+                let fourSquareResponse = FourSquareResponse(dictionary: dictionary)
             else {
-                completion(nil, error)//Hanlde error please
+                completion(nil, FourSquareMerlinError.services)
                 return
             }
             
             if self.isErrorRequest(meta: fourSquareResponse.meta) {
-                completion(nil, error) //Error from foursquare API
+                completion(nil, FourSquareMerlinError.services)
             } else {
                 completion(fourSquareResponse.response.venues, nil)
             }
@@ -41,10 +54,12 @@ class FourSquareAPI {
         return isSuccess
     }
     
-    func processMetaResponse(meta: FourSquareMeta) {
-        
+    private func currentDate() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = FourSquareAPIConfig.foursquareDateStringFormat
+        return dateFormatter.string(from: date)
     }
-    
     
     private func fetchVenuesParameters(location: CLLocation, dateString: String) -> JSONObject {
         var parameters = JSONObject()
@@ -57,8 +72,6 @@ class FourSquareAPI {
     }
     
     private enum Key {
-        //"https://api.foursquare.com/v2/venues/search?ll=4.592000,-74.158767&client_id=IJEWNYNTYDJ4SUU00FO0CTSW50IDXWPG2MIZLBPG5WEL4TXQ&client_secret=SX0RDDTIAF1RZXBFVITY0SK2M0XZUMKDNYR5MDDPILT5BGGN&v=20181116&intent=checkin"
-        
         enum Parameters {
             static let location = "ll"
             static let clientIdentifier = "client_id"

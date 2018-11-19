@@ -17,6 +17,11 @@
 		EAD4C76821A2797500E8308A /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = EAD4C76721A2797500E8308A /* podfile */; };
 		EAD4C76A21A279D100E8308A /* MapVenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C76921A279D100E8308A /* MapVenuesViewController.swift */; };
 		EAD4C76C21A27A4600E8308A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C76B21A27A4600E8308A /* UIViewController+Extension.swift */; };
+		EAD4C76E21A2902500E8308A /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C76D21A2902500E8308A /* Categories.swift */; };
+		EAD4C77021A2904200E8308A /* FourSquareIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C76F21A2904200E8308A /* FourSquareIcon.swift */; };
+		EAD4C77221A2924600E8308A /* FourSquareLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C77121A2924600E8308A /* FourSquareLocation.swift */; };
+		EAD4C77421A292AF00E8308A /* FourSquareMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C77321A292AF00E8308A /* FourSquareMeta.swift */; };
+		EAD4C77621A2986800E8308A /* FourSquareResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4C77521A2986800E8308A /* FourSquareResponse.swift */; };
 		EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */; };
 		EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDEB42219BF9D2005DA89F /* ViewController.swift */; };
 		EAFDEB46219BF9D2005DA89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFDEB44219BF9D2005DA89F /* Main.storyboard */; };
@@ -59,6 +64,11 @@
 		EAD4C76721A2797500E8308A /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		EAD4C76921A279D100E8308A /* MapVenuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVenuesViewController.swift; sourceTree = "<group>"; };
 		EAD4C76B21A27A4600E8308A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		EAD4C76D21A2902500E8308A /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		EAD4C76F21A2904200E8308A /* FourSquareIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareIcon.swift; sourceTree = "<group>"; };
+		EAD4C77121A2924600E8308A /* FourSquareLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareLocation.swift; sourceTree = "<group>"; };
+		EAD4C77321A292AF00E8308A /* FourSquareMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareMeta.swift; sourceTree = "<group>"; };
+		EAD4C77521A2986800E8308A /* FourSquareResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareResponse.swift; sourceTree = "<group>"; };
 		EAFDEB3D219BF9D2005DA89F /* MerlinFourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerlinFourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFDEB40219BF9D2005DA89F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAFDEB42219BF9D2005DA89F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +223,11 @@
 				EAFDEB71219EDDAF005DA89F /* FourSquareAPI.swift */,
 				EAFDEB73219EE992005DA89F /* Venue.swift */,
 				EA925E5521A1F07300F56BEA /* FourSquareEndpoint.swift */,
+				EAD4C76D21A2902500E8308A /* Categories.swift */,
+				EAD4C76F21A2904200E8308A /* FourSquareIcon.swift */,
+				EAD4C77121A2924600E8308A /* FourSquareLocation.swift */,
+				EAD4C77321A292AF00E8308A /* FourSquareMeta.swift */,
+				EAD4C77521A2986800E8308A /* FourSquareResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,17 +415,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD4C76C21A27A4600E8308A /* UIViewController+Extension.swift in Sources */,
+				EAD4C77621A2986800E8308A /* FourSquareResponse.swift in Sources */,
 				EAFDEB70219BF9F0005DA89F /* NetworkManager.swift in Sources */,
 				EA925E5921A1F16B00F56BEA /* Dictionary+Extension.swift in Sources */,
+				EAD4C77421A292AF00E8308A /* FourSquareMeta.swift in Sources */,
 				EAD4C76A21A279D100E8308A /* MapVenuesViewController.swift in Sources */,
 				EA925E6821A2248500F56BEA /* VenueCollectionViewCell.swift in Sources */,
+				EAD4C77021A2904200E8308A /* FourSquareIcon.swift in Sources */,
 				EAFDEB74219EE992005DA89F /* Venue.swift in Sources */,
 				EAFDEB72219EDDAF005DA89F /* FourSquareAPI.swift in Sources */,
+				EAD4C77221A2924600E8308A /* FourSquareLocation.swift in Sources */,
 				EA925E5621A1F07400F56BEA /* FourSquareEndpoint.swift in Sources */,
 				EAFDEB43219BF9D2005DA89F /* ViewController.swift in Sources */,
 				EA925E5C21A1FA1D00F56BEA /* VenueListViewController.swift in Sources */,
 				EA925E6321A1FE5700F56BEA /* UIView+Extension.swift in Sources */,
 				EAFDEB41219BF9D2005DA89F /* AppDelegate.swift in Sources */,
+				EAD4C76E21A2902500E8308A /* Categories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

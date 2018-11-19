@@ -8,69 +8,41 @@
 
 import Foundation
 
-struct FourSquareResponse: Decodable {
-    let meta: FourSquareMeta
-    let response: FourSquareDataResponse
-}
-
-struct FourSquareMeta: Decodable {
-    let requestId: String
-    let code: Int
-    let errorType: String?
-    let errorDetail: String?
-}
-
-struct FourSquareDataResponse: Decodable {
-    let confident: Bool
-    let venues: [Venue]
-}
-
-
-struct Venue: Decodable {
-    let hasPerk: Bool
+class Venue: Decodable {
+    let hasPerk: Bool?
     let id: String
     let categories: [Categories]
     let name: String
     let location: FourSquareLocation
-    let referralId: String
+    let referralId: String?
     let venuePage: String?
-}
-
-
-struct Categories: Decodable {
-    let id: String
-    let pluralName: String
-    let icon: Icon
-    let name: String
-    let shortName: String
-    let primary: Bool
-}
-
-
-struct Icon: Decodable {
-    let prefix: String
-    let suffix: String
-}
-
-struct FourSquareLocation: Decodable {
-    let neighborhood: String?
-    let crossStreet: String?
-    let address: String?
-    let state: String?
-    let city: String?
-    let distance: Int
-    let postalCode: String?
-    let country: String?
-    let formattedAddress: [String]
-    let lat: Double
-    let lng: Double
-    let labeledLatLngs: [LabeledLatLngs]
-    let cc: String?
     
+    init?(dictionary: JSONObject) {
+        guard
+            let identifier = dictionary[Parameters.identifier] as? String,
+            let name = dictionary[Parameters.name] as? String,
+            let categoriesJSON = dictionary[Parameters.categories] as? [JSONObject],
+            let firstCategoryJSON = categoriesJSON.first,
+            let categories = Categories(dictionary: firstCategoryJSON),
+            let locationJSON = dictionary[Parameters.location] as? JSONObject,
+            let location = FourSquareLocation(dictionary: locationJSON)
+        else {
+            return nil
+        }
+        id = identifier
+        self.name = name
+        self.categories = [categories]
+        self.location = location
+        hasPerk = nil
+        referralId = nil
+        venuePage = nil
+    }
+    
+    private enum Parameters {
+        static let identifier = "id"
+        static let name = "name"
+        static let categories = "categories"
+        static let location = "location"
+    }
 }
 
-struct LabeledLatLngs: Decodable {
-    let label: String
-    let lat: Double
-    let lng: Double
-}
